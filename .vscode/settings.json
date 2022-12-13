@@ -7,5 +7,6 @@
   "rome.lspBin": "./node_modules/.bin/rome",
   "[jsonc]": {
     "editor.defaultFormatter": "vscode.json-language-features"
-  }
+  },
+  "editor.formatOnSave": true
 }
