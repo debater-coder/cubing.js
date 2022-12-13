@@ -82,6 +82,10 @@ function siteOptions(srcFolder, dev) {
       external: ["node:*"], // TODO
       supported: { ...ESM_CLASS_PRIVATE_ESBUILD_SUPPORTED },
     },
+    setHeaders: (request, response) => {
+      response.setHeader("Cross-Origin-Embedder-Policy", "require-corp");
+      response.setHeader("Cross-Origin-Opener-Policy", "same-origin");
+    },
   };
 }
 
@@ -277,7 +281,6 @@ export const binTarget = {
       watch: dev,
       logLevel: "info",
       sourcemap: dev,
-      //
       external,
       supported: {
         ...ESM_CLASS_PRIVATE_ESBUILD_SUPPORTED,
