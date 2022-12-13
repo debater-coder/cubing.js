@@ -31,7 +31,7 @@ const leftpad = (n: number, width: number, z = "0") => {
 
   const zip = new JSZip();
   for (let i = 0; i < frames.length; i++) {
-    console.log("frame", i + 1, "of", frames.length)
+    console.log("frame", i, "of", frames.length)
 
     const idx = frames[i].indexOf('base64,') + 'base64,'.length; // or = 28 if you're sure about the prefix
     const content = frames[i].substring(idx);
