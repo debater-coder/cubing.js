@@ -36,7 +36,7 @@ const leftpad = (n: number, width: number, z = "0") => {
     const idx = frames[i].indexOf('base64,') + 'base64,'.length; // or = 28 if you're sure about the prefix
     const content = frames[i].substring(idx);
 
-    zip.file(`frame-${leftpad(i, 3)}.png`, content, { base64: true });
+    zip.file(`frame-${leftpad(i + 1, 3)}.png`, content, { base64: true });
   }
 
   // Step 3: Download the zipfile.
