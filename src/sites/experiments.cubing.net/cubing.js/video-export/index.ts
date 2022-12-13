@@ -1,11 +1,5 @@
 import { JSZip } from "../twizzle-diaries/intro/jszip-wrapper";
 import { TwistyPlayer } from "../../../../cubing/twisty";
-
-const leftpad = (n: number, width: number, z = "0") => {
-  const s = n + "";
-  return s.length >= width ? s : new Array(width - s.length + 1).join(z) + s;
-};
-
 (async () => {
   
   const player = new TwistyPlayer({
@@ -36,7 +30,7 @@ const leftpad = (n: number, width: number, z = "0") => {
     const idx = frames[i].indexOf('base64,') + 'base64,'.length; // or = 28 if you're sure about the prefix
     const content = frames[i].substring(idx);
 
-    zip.file(`frame-${leftpad(i, 3)}.png`, content, { base64: true });
+    zip.file(`frame-${i}.png`, content, { base64: true });
   }
 
   // Step 3: Download the zipfile.
